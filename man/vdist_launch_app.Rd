@@ -2,15 +2,15 @@
 % Please edit documentation in R/vdist-app.R
 \name{vdist_launch_app}
 \alias{vdist_launch_app}
-\title{Launch Shiny App}
+\title{Launch shiny app}
 \usage{
 vdist_launch_app()
 }
 \description{
-Launches shiny app
+Launches shiny app for visualizing distributions.
 }
 \examples{
 \dontrun{
-vdist_launch_app()
+vdist_launch_app ()
 }
 }
