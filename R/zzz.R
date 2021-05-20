@@ -1,23 +1,24 @@
-#' @importFrom magrittr %>%
+#' @import magrittr 
+#' @import stats
 .onAttach <- function(...) {
 
-  if (!interactive() || stats::runif(1) > 0.1) return()
+  if (!interactive() || runif(1) > 0.1) return()
 
-  pkgs <- utils::available.packages()
+  pkgs <- available.packages()
   
   cran_version <- 
     pkgs %>%
-    magrittr::extract("vistributions", "Version") %>%
+    extract("vistributions", "Version") %>%
     package_version()
 
-  local_version <- utils::packageVersion("vistributions")
+  local_version <- packageVersion("vistributions")
   behind_cran <- cran_version > local_version
 
   tips <- c(
     "Learn more about vistributions at https://github.com/rsquaredacademy/vistributions/.",
     "Use suppressPackageStartupMessages() to eliminate package startup messages.",
-    "Need help getting started with regression models? Visit: https://www.rsquaredacademy.com",
-    "Check out our interactive app for quick data exploration. Visit: https://apps.rsquaredacademy.com/."
+    "You might like our blog. Visit: https://blog.rsquaredacademy.com",
+    "Check out all our R packages. Visit: https://pkgs.rsquaredacademy.com/."
   )
 
   tip <- sample(tips, 1)
@@ -26,8 +27,8 @@
     if (behind_cran) {
       msg <- "A new version of vistributions is available with bug fixes and new features."
       packageStartupMessage(msg, "\nWould you like to install it?")
-      if (utils::menu(c("Yes", "No")) == 1) {
-        utils::update.packages("vistributions")
+      if (menu(c("Yes", "No")) == 1) {
+        update.packages("vistributions")
       } 
     } else {
       packageStartupMessage(paste(strwrap(tip), collapse = "\n"))

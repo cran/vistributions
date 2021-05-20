@@ -6,18 +6,36 @@
 \alias{vdist_chisquare_prob}
 \title{Visualize chi square distribution}
 \usage{
-vdist_chisquare_plot(df = 3, normal = FALSE)
+vdist_chisquare_plot(
+  df = 3,
+  normal = FALSE,
+  xaxis_range = 25,
+  print_plot = TRUE
+)
 
-vdist_chisquare_perc(probs = 0.95, df = 3, type = c("lower",
-  "upper"))
+vdist_chisquare_perc(
+  probs = 0.95,
+  df = 3,
+  type = c("lower", "upper"),
+  print_plot = TRUE
+)
 
-vdist_chisquare_prob(perc, df, type = c("lower", "upper"))
+vdist_chisquare_prob(
+  perc = 13,
+  df = 11,
+  type = c("lower", "upper"),
+  print_plot = TRUE
+)
 }
 \arguments{
 \item{df}{Degrees of freedom.}
 
 \item{normal}{If \code{TRUE}, normal curve with same \code{mean} and
 \code{sd} as the chi square distribution is drawn.}
+
+\item{xaxis_range}{The upper range of the X axis.}
+
+\item{print_plot}{logical; if \code{TRUE}, prints the plot else returns a plot object.}
 
 \item{probs}{Probability value.}
 
