@@ -1,4 +1,4 @@
-## ---- echo=FALSE, message=FALSE-----------------------------------------------
+## ----echo=FALSE, message=FALSE------------------------------------------------
 library(vistributions)
 
 ## ----norm_plot, fig.width=7, fig.height=7, fig.align='centre'-----------------
